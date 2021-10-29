@@ -22,7 +22,7 @@ USER zondax
 WORKDIR /home/zondax
 
 RUN sudo apt-get update && sudo apt-get -y install \
-    lbzip2
+    lbzip2 liblz4-tool zstd
 
 ####################################
 ADD entrypoint.sh /home/zondax/entrypoint.sh
