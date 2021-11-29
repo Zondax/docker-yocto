@@ -31,6 +31,9 @@ RUN apt-get update && \
 
 RUN wget https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo && chmod a+x /usr/bin/repo
 
+RUN apt-get update && \
+    apt-get -y install zsh
+
 ADD install_user.sh /tmp/install_user.sh
 ADD install_rust.sh /tmp/install_rust.sh
 
