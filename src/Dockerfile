@@ -41,8 +41,8 @@ RUN echo "zondax ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN adduser --disabled-password --gecos "" -u 1001 zondax_circle
 RUN echo "zondax_circle ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-RUN adduser --disabled-password --gecos "" -u 501 zondax_mac
-RUN echo "zondax_mac ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+# RUN adduser --disabled-password --gecos "" -u 501 zondax_mac
+# RUN echo "zondax_mac ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 WORKDIR /home/zondax
 USER zondax
@@ -52,9 +52,9 @@ WORKDIR /home/zondax_circle
 USER zondax_circle
 RUN /tmp/install_user.sh
 
-WORKDIR /home/zondax_mac
-USER zondax_mac
-RUN /tmp/install_user.sh
+# WORKDIR /home/zondax_mac
+# USER zondax_mac
+# RUN /tmp/install_user.sh
 
 ###################
 
