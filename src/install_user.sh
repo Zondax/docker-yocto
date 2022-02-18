@@ -5,7 +5,7 @@ set -e
 #go get -u -v github.com/tcnksm/ghr
 
 curl https://sh.rustup.rs -sSf | bash -s -- -y
-/tmp/install_rust.sh 1.54.0
+/tmp/install_rust.sh 1.58.1
 
 git config --global user.email "hello@zondax.ch"
 git config --global user.name "zondax"
