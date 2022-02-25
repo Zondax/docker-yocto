@@ -18,7 +18,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-    apt-get -y install curl python-is-python3 locales sudo zsh gdisk libssl-dev
+    apt-get -y install curl python-is-python3 locales sudo zsh gdisk libssl-dev rsync bc
 
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \
@@ -27,7 +27,10 @@ ENV LANG en_US.UTF-8
 
 # Fix locale issues
 RUN apt-get update && \
-    apt-get -y install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint3 xterm python3-subunit mesa-common-dev zstd liblz4-tool lbzip2
+    apt-get -y install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 \ 
+    python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa \ 
+    libsdl1.2-dev pylint3 xterm python3-subunit mesa-common-dev zstd liblz4-tool lbzip2 bzip2 gzip patch tar \
+    binutils perl file wget 
 
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo && chmod a+x /usr/bin/repo
 
