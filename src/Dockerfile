@@ -18,7 +18,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-    apt-get -y install curl python-is-python3 locales sudo zsh gdisk libssl-dev rsync bc
+    apt-get -y install curl python-is-python3 locales sudo zsh gdisk libssl-dev rsync bc device-tree-compiler
 
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \
